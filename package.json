@@ -1,15 +1,15 @@
 {
   "name": "prezenhtml",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "PrezenHTML Presenter Dashboard",
   "main": "main.js",
   "scripts": {
     "start": "concurrently \"vite\" \"wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .\"",
     "build": "vite build",
-    "dist": "npm run build && electron-builder",
-    "dist:win": "npm run build && electron-builder --win",
-    "dist:mac": "npm run build && electron-builder --mac",
-    "dist:linux": "npm run build && electron-builder --linux"
+    "dist": "npm run build && electron-builder --publish always",
+    "dist:win": "npm run build && electron-builder --win --publish always",
+    "dist:mac": "npm run build && electron-builder --mac --publish always",
+    "dist:linux": "npm run build && electron-builder --linux --publish always"
   },
   "build": {
     "appId": "com.prezenhtml.app",
