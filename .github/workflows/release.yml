@@ -28,20 +28,45 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build & Publish (Windows)
+      - name: Build (Windows)
         if: matrix.os == 'windows-latest'
         run: npm run dist:win
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build & Publish (Linux)
+      - name: Build (Linux)
         if: matrix.os == 'ubuntu-latest'
         run: npm run dist:linux
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build & Publish (macOS)
+      - name: Build (macOS)
         if: matrix.os == 'macos-latest'
         run: npm run dist:mac
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-assets-${{ matrix.os }}
+          path: |
+            release/*.exe
+            release/*.deb
+            release/*.AppImage
+            release/*.dmg
+            release/*.zip
+          retention-days: 1
+
+  publish:
+    name: Publish Release
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          pattern: built-assets-*
+          merge-multiple: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release-assets/*
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
