@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrezenHTML | Modern Presenter Dashboard</title>
+  <meta name="description" content="PrezenHTML is a powerful desktop application that provides a presenter dashboard, speaker notes, audience sync, and more for your HTML presentations.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient animated background -->
+  <div class="ambient-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <nav class="glass-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="../PrezenHTML-logo-main.png" alt="PrezenHTML Logo" class="logo-img">
+        <span class="logo-text">PrezenHTML</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#download" class="btn-primary-small">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Present like a <span class="text-gradient">pro.</span></h1>
+        <p class="hero-subtitle">The ultimate dashboard for your HTML slides. Includes speaker notes, a virtual laser pointer, and seamless audience syncing.</p>
+        
+        <div class="hero-actions">
+          <a href="https://github.com/foyez/PrezenHTML/releases/latest" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Latest Release
+          </a>
+          <a href="https://github.com/foyez/PrezenHTML" class="btn-secondary">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glass-panel app-mockup">
+          <div class="mockup-header">
+            <div class="dots">
+              <span class="dot close"></span>
+              <span class="dot min"></span>
+              <span class="dot max"></span>
+            </div>
+            <div class="mockup-title">PrezenHTML Dashboard</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-slide current">Current Slide <br><small>1 / 15</small></div>
+            <div class="mockup-sidebar">
+              <div class="mockup-slide next">Next Slide</div>
+              <div class="mockup-notes">
+                <h4>SPEAKER NOTES</h4>
+                <p>Welcome everyone to the presentation. Today we will discuss...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2 class="section-title">Everything you need. <span class="text-gradient">Nothing you don't.</span></h2>
+      <div class="feature-grid">
+        <div class="glass-card feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="3" height="9"></rect><rect x="14" y="7" width="3" height="5"></rect></svg>
+          </div>
+          <h3>Presenter Dashboard</h3>
+          <p>See your current slide, next slide, and speaker notes all in one place. Keep track of time and slide count effortlessly.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M4.93 4.93l2.83 2.83"></path><path d="M16.24 16.24l2.83 2.83"></path><path d="M2 12h4"></path><path d="M18 12h4"></path></svg>
+          </div>
+          <h3>Virtual Laser Pointer</h3>
+          <p>Use your mouse as a laser pointer. Perfect for highlighting key points to your audience in real-time.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3>Audience Sync</h3>
+          <p>Share a local link or QR code so your audience can follow along on their own devices. No internet required.</p>
+        </div>
+        <div class="glass-card feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15h6"></path><path d="M12 12v6"></path></svg>
+          </div>
+          <h3>PPTX Export</h3>
+          <p>Need to share your presentation? Export your rich HTML slides straight to PowerPoint format with a single click.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download-section">
+      <div class="glass-panel download-panel">
+        <h2>Ready to upgrade your presentations?</h2>
+        <p>Available for macOS, Windows, and Linux.</p>
+        <div class="download-buttons">
+          <a href="https://github.com/foyez/PrezenHTML/releases/latest" class="btn-os">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 18a5 5 0 0 0-10 0"></path><line x1="12" y1="2" x2="12" y2="9"></line><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"></line><line x1="1" y1="18" x2="3" y2="18"></line><line x1="21" y1="18" x2="23" y2="18"></line><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"></line><line x1="23" y1="22" x2="1" y2="22"></line><polyline points="16 5 12 9 8 5"></polyline></svg>
+            macOS
+          </a>
+          <a href="https://github.com/foyez/PrezenHTML/releases/latest" class="btn-os">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            Windows
+          </a>
+          <a href="https://github.com/foyez/PrezenHTML/releases/latest" class="btn-os">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
+            Linux
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 PrezenHTML. Open source and built with modern web tech.</p>
+  </footer>
+</body>
+</html>

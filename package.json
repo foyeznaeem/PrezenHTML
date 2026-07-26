@@ -1,0 +1,76 @@
+{
+  "name": "prezenhtml",
+  "version": "1.0.0",
+  "description": "PrezenHTML Presenter Dashboard",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"vite\" \"wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .\"",
+    "build": "vite build",
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win",
+    "dist:mac": "npm run build && electron-builder --mac",
+    "dist:linux": "npm run build && electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.prezenhtml.app",
+    "productName": "PrezenHTML",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "src/server.js",
+      "src/socket.js",
+      "src/preload.js",
+      "src/public/**/*",
+      "PrezenHTML-logo-main.png",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.png",
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build/icon.png",
+      "maintainer": "PrezenHTML Team <hello@prezenhtml.com>",
+      "category": "Utility",
+      "syncDesktopName": true
+    }
+  },
+  "keywords": [],
+  "author": {
+    "name": "PrezenHTML Team",
+    "email": "hello@prezenhtml.com"
+  },
+  "homepage": "https://prezenhtml.com",
+  "desktopName": "PrezenHTML",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^10.0.3",
+    "cross-env": "^10.1.0",
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3",
+    "jimp": "^1.6.1",
+    "sharp": "^0.35.3",
+    "vite": "^8.1.5",
+    "wait-on": "^9.1.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "express": "^5.2.1",
+    "pptxgenjs": "^4.0.1",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
+  }
+}
